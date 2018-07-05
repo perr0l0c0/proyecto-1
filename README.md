@@ -1,3 +1,3 @@
 # proyecto
-#cristian manco
-#cristian esto no se ve
+# cristian manco
+# cristian esto no se ve

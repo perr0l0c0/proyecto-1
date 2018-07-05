@@ -32,100 +32,45 @@
               </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Login</a>
-              <a class="dropdown-item" data-toggle="modal" data-target="#modalregistro">Registrate</a>
-              <!-- Modal -->
-              <div id="modal_registro" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="modal_registro_label" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title col-md-9 text-left" id="modal_registro_label">Registro</h4>
-                      <div class="col-md-3 text-right"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
-                    </div>
-                    <div class="modal-body">
-
-                      <table>
-                        <tr>
-                          <th>Nick: </th>
-                          <th>Contraseña: </th>
-                        </tr>
-                        <tr>
-                          <td><input type="text" name="" placeholder="Nickname" id="nick" value=""></td>
-                          <td><input type="text" name="" placeholder="****" id="password" value=""></td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td> <button type="button" class="btn btn-primary" name="button" id="btn_registro" data-dismiss="modal">Registrarme</button></td>
-                        </tr>
-                      </table>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <!-- fin modal -->
-
+              <a class="dropdown-item" href="#">Registrate</a>
             </div>
           </li>
         </ul>
       </div>
     </nav>
   </header>
-        <!-- error 1 -->
-  <!-- Button trigger modal -->
-  <a class="dropdown-item" data-toggle="modal" data-target="#modalregistro" hidden="hidden" href="#">Registrate</a>
 
-  <!-- Modal -->
-  <div class="modal fade" id="modalregistro" tabindex="-1" role="dialog" aria-labelledby="modalregistrolabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title col-md-9 text-left" id="modalregistrolabel">Registro</h4>
-          <div class="col-md-3 text-right"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
-        </div>
-        <div class="modal-body">
-
-          <table>
-            <tr>
-              <th>Nick: </th>
-              <th>Contraseña: </th>
-            </tr>
-            <tr>
-              <td><input type="text" name="" placeholder="Nickname" value=""></td>
-              <td><input type="text" name="" placeholder="****" value=""></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td> <button type="button" class="btn btn-primary" name="button" data-dismiss="modal">Registrarme</button></td>
-            </tr>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
   <!-- Contenido principal -->
   <section class="container-fluid">
-    <div class="row">
-      <form action="vista1.html" class="form-inline col-centrada">
-        <div class="col-12 img"></div>
+    <div class="buscardorV1">
+      <div class="row">
+       <div class="col-6">
+        <h4 class="text-right">Buscar por: </h4>           
+       </div>
+        <div class="col-6 mt-2">        
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label class="form-check-label" for="inlineRadio1">Localizacion</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <label class="form-check-label" for="inlineRadio2">Trabajo</label>
+            </div>
+        </div>
+      </div>
+      <!--buscador segun seleccion en nueva busqueda(arreglar grid)-->
+       <div class="row mt-3 ml-5">           
         <div class="row form-group col-9 mx-sm-3 mb-2">
           <input type="text" class="col-6 col-sm-6 col-md-6 form-control" id="localidad" placeholder="Ej: Malaga">
           <input type="text" class="col-6 col-sm-6 col-md-6 form-control" id="trabajo" placeholder="Ej: Carrefour">
         </div>
         <button type="submit" class="btn btn-primary mb-2">Buscar</button>
-      </form>
+      </div>
+
     </div>
   </section>
-
-  <!--FOOTER-->
+  
+<!--FOOTER-->
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -182,29 +127,6 @@
   <script src="style/jquery-3.3.1.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="style/bootstrap/js/bootstrap.js"></script>
-
-  <!-- js independiente (registro) -->
-  <script type="text/javascript">
-    $( document ).ready(function() {
-
-      $( "#btn_registro" ).click(function(){
-
-        $.ajax({
-          type:"GET",
-          url:"php/registro.php",
-          data:{
-            nick:$('#nick').val(),
-            password:$('#password').val()
-          }, success:function(data){
-            alert(data);
-          }
-        });
-
-      });
-
-
-    });
-  </script>
 </body>
 
 </html>
